@@ -12,12 +12,13 @@ app.get("/", (req, res) => {
 
 app.post("/receipts/process", (req, res) => {
   const receivedData = req.body;
-
-  const id = storeData(receivedData);
-
-  res.json({
-    id: id,
-  });
+  if (receivedData != null) {
+    res.json({
+      id: storeData(receivedData),
+    });
+  } else {
+    res.status(400).json({ message: "The receipt is invalid" });
+  }
 });
 
 app.get("/receipts/:id/points", (req, res) => {
@@ -29,7 +30,7 @@ app.get("/receipts/:id/points", (req, res) => {
       points: data,
     });
   } else {
-    res.status(404).json({ message: "Data not found" });
+    res.status(404).json({ message: "No receipt found for that id" });
   }
 });
 
