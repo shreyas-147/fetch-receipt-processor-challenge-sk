@@ -6,6 +6,10 @@ Steps to run:
 4. npm i
 5. npm start
 
+To run using DockerFile:
+1. Build Docker Image
+2. Run Docker Container
+
 Using Postman for testing the services:
 
 POST: http://localhost:3000/receipts/process (request body json as provided in the challenge)
