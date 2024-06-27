@@ -8,7 +8,7 @@ Steps to run:
 
 To run using DockerFile:
 1. Build Docker Image
-2. Run Docker Container
+2. Run Docker Image created
 
 Using Postman for testing the services:
 
